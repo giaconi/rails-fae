@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Blogpost < ApplicationRecord
   include Fae::BaseModelConcern
 
@@ -6,7 +8,6 @@ class Blogpost < ApplicationRecord
   end
 
   has_fae_image :main_image
-
 
   belongs_to :blogpost_category
 end
