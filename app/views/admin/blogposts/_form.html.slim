@@ -1,0 +1,14 @@
+= simple_form_for(['admin', @item]) do |f|
+  header.content-header.js-content-header
+    == render 'fae/shared/form_header', header: @klass_name
+  == render 'fae/shared/errors'
+
+  main.content
+    = fae_input f, :title
+    = fae_input f, :slug
+    = fae_input f, :introduction, markdown: true
+    = fae_input f, :body, markdown: true
+    = fae_input f, :date
+    = fae_input f, :keywords, collection: ['nature', 'wildness', 'sea', 'thai-food', 'test'].map { |i| [i, i] }, input_html: { multiple: true }
+
+    = fae_association f, :blogpost_category
